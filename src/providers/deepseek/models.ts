@@ -52,17 +52,17 @@ export const DEEPSEEK_V4_1_FLASH: ModelItem = {
     },
   },
   priceCategory: 'low',
-}
+};
 
 export const DEEPSEEK_V4_FLASH: ModelItem = {
   ...DEEPSEEK_V4_1_FLASH,
   label: 'DeepSeek V4 Flash',
-}
+};
 
 export const DEEPSEEK_V4_FLASH_VISION_EXP: ModelItem = {
   ...DEEPSEEK_V4_FLASH,
   label: 'DeepSeek V4 Flash Vision Exp',
-}
+};
 
 export const DEEPSEEK_V4_PRO_0813: ModelItem = {
   ...DEEPSEEK_V4_PRO,
@@ -76,7 +76,4 @@ export const DEEPSEEK_V4_FLASH_0731: ModelItem = {
   label: 'DeepSeek V4 Flash 0731',
 };
 
-export const DS_MODELS: readonly ModelItem[] = [
-  DEEPSEEK_V4_PRO,
-  DEEPSEEK_V4_1_FLASH
-];
+export const DS_MODELS: readonly ModelItem[] = [DEEPSEEK_V4_PRO, DEEPSEEK_V4_1_FLASH];
