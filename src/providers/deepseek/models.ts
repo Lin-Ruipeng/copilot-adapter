@@ -32,33 +32,36 @@ export const DEEPSEEK_V4_PRO: ModelItem = {
   priceCategory: 'medium',
 };
 
-export const DEEPSEEK_V4_FLASH: ModelItem = {
+export const DEEPSEEK_V4_1_FLASH: ModelItem = {
   ...DS_BASE,
-  id: 'deepseek-v4-flash',
-  label: 'DeepSeek V4 Flash',
+  id: 'deepseek-flash',
+  label: 'DeepSeek V4.1 Flash',
   version: '4',
+  imageInput: true,
   maxInputTokens: 616_000,
   maxOutputTokens: 384_000,
-  detailKey: 'model.deepseek-v4-flash.detail',
+  detailKey: 'model.deepseek-flash.detail',
   pricing: {
     CNY: {
-      default: { cacheInput: 0.05, input: 1.5, output: 4.5 },
-      longContext: { cacheInput: 0.1, input: 3, output: 9 },
+      default: { cacheInput: 0.02, input: 1, output: 4 },
+      longContext: { cacheInput: 0.04, input: 2, output: 8 },
     },
     USD: {
-      default: { cacheInput: 0.007, input: 0.22, output: 0.66 },
-      longContext: { cacheInput: 0.014, input: 0.44, output: 1.32 },
+      default: { cacheInput: 0.003, input: 0.15, output: 0.6 },
+      longContext: { cacheInput: 0.006, input: 0.3, output: 1.2 },
     },
   },
   priceCategory: 'low',
 };
 
+export const DEEPSEEK_V4_FLASH: ModelItem = {
+  ...DEEPSEEK_V4_1_FLASH,
+  label: 'DeepSeek V4 Flash',
+};
+
 export const DEEPSEEK_V4_FLASH_VISION_EXP: ModelItem = {
   ...DEEPSEEK_V4_FLASH,
-  imageInput: true,
-  id: 'deepseek-v4-flash-vision-exp',
   label: 'DeepSeek V4 Flash Vision Exp',
-  detailKey: 'model.deepseek-v4-flash-vision-exp.detail',
 };
 
 export const DEEPSEEK_V4_PRO_0813: ModelItem = {
@@ -73,8 +76,4 @@ export const DEEPSEEK_V4_FLASH_0731: ModelItem = {
   label: 'DeepSeek V4 Flash 0731',
 };
 
-export const DS_MODELS: readonly ModelItem[] = [
-  DEEPSEEK_V4_PRO,
-  DEEPSEEK_V4_FLASH,
-  DEEPSEEK_V4_FLASH_VISION_EXP,
-];
+export const DS_MODELS: readonly ModelItem[] = [DEEPSEEK_V4_PRO, DEEPSEEK_V4_1_FLASH];

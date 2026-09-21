@@ -92,7 +92,7 @@ suite('providers/qwen model.requestExtras()', () => {
         'qwen3.7-max-us', 
         'qwen3.7-plus-us',
         'deepseek-v4-pro',
-        'deepseek-v4-flash',
+        'deepseek-flash',
         'deepseek-v4-pro-0813',
         'deepseek-v4-flash-0731',
         'deepseek-v4-pro-us',
