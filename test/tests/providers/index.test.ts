@@ -85,11 +85,11 @@ suite('providers/index', () => {
   });
 
   suite('modelById', () => {
-    test('deepseek-v4-flash maps to DEEPSEEK provider', () => {
-      const entry = modelById.get('deepseek-v4-flash-deepseek-deepseek');
-      assert.ok(entry !== undefined, 'deepseek-v4-flash-deepseek-deepseek not found in modelById');
+    test('deepseek-flash maps to DEEPSEEK provider', () => {
+      const entry = modelById.get('deepseek-flash-deepseek-deepseek');
+      assert.ok(entry !== undefined, 'deepseek-flash-deepseek-deepseek not found in modelById');
       assert.strictEqual(entry!.provider, DEEPSEEK);
-      assert.equal(entry!.id, 'deepseek-v4-flash');
+      assert.equal(entry!.id, 'deepseek-flash');
     });
 
     test('minimax-m2.7-highspeed maps to MINIMAX provider', () => {

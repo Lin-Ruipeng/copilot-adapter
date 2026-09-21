@@ -195,7 +195,7 @@ export const DEEPSEEK_V4_FLASH_US: ModelItem = {
   ...DEEPSEEK_V4_FLASH,
   id: 'deepseek-v4-flash-us',
   label: 'DeepSeek V4 Flash (US only)',
-  detailKey: 'model.deepseek-v4-flash.detail',
+  detailKey: 'model.deepseek-flash.detail',
 };
 
 export const ZHIPU_GLM_5_2_US: ModelItem = {

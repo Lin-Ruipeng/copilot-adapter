@@ -9,7 +9,7 @@ export const en: Translation = {
   'provider.zhipu.detail': 'Zhipu BigModel GLM series',
   'provider.bytedance.detail': 'BytePlus ModelArk',
 
-  'model.deepseek-v4-flash.detail': 'Fast, general-purpose model',
+  'model.deepseek-flash.detail': 'Fast, general-purpose model',
   'model.deepseek-v4-pro.detail': 'Deep reasoning model',
   'model.deepseek-v4-flash-vision-exp.detail': 'DeepSeek V4 Flash Vision Exp',
 

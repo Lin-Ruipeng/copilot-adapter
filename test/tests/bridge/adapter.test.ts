@@ -31,7 +31,7 @@ suite('bridge/adapter multi-group', () => {
         maxOutputTokens: 500,
         thinking: true, imageInput: false,
         source: 'builtin' as const,
-    detailKey: 'model.deepseek-v4-flash.detail',
+    detailKey: 'model.deepseek-flash.detail',
         provider: DEEPSEEK,
       };
 
@@ -52,7 +52,7 @@ suite('bridge/adapter multi-group', () => {
         maxOutputTokens: 500,
         thinking: true, imageInput: false,
         source: 'builtin' as const,
-    detailKey: 'model.deepseek-v4-flash.detail',
+    detailKey: 'model.deepseek-flash.detail',
         provider: DEEPSEEK,
       };
 
@@ -79,7 +79,7 @@ suite('bridge/adapter multi-group', () => {
         maxOutputTokens: 500,
         thinking: true, imageInput: false,
         source: 'builtin' as const,
-    detailKey: 'model.deepseek-v4-flash.detail',
+    detailKey: 'model.deepseek-flash.detail',
         provider: DEEPSEEK,
       };
 

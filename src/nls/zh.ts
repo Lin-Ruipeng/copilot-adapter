@@ -9,7 +9,7 @@ export const zh: Translation = {
   'provider.zhipu.detail': '智谱 BigModel GLM 系列',
   'provider.bytedance.detail': '字节跳动 火山方舟',
 
-  'model.deepseek-v4-flash.detail': '快速通用模型',
+  'model.deepseek-flash.detail': '快速通用模型',
   'model.deepseek-v4-pro.detail': '深度推理模型',
   'model.deepseek-v4-flash-vision-exp.detail':
     '模型支持在文本之外输入图片，你可以让模型描述图片、识别截图中的文字、分析图表等',
