@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.18] 2026-09-22
+
+* Feat: Update deepseek info by @eowl in [#71](https://github.com/eowl/copilot-adapter/pull/71)
+
+**Full Changelog**: https://github.com/eowl/copilot-adapter/compare/v0.1.17...v0.1.18
+
 ## [0.1.17](https://github.com/eowl/copilot-adapter/releases/tag/v0.1.17) 2026-09-02
 
 * refactor: change request timeout to 180s by @eowl in [#69](https://github.com/eowl/copilot-adapter/pull/69)
