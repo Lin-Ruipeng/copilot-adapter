@@ -78,7 +78,8 @@ export const zh: Translation = {
   'model.glm-4v-flash.detail': '免费模型——图像理解、多语言支持',
 
   'model.mimo-v2.5-pro.detail': '深度推理模型，支持超大上下文',
-  'model.mimo-v2.5.detail': '深度推理模型，支持视觉功能',
+  'model.mimo-v2.6-pro.detail': '旗舰全模态推理模型',
+  'model.mimo-v2.6-flash.detail': '高速、低成本的全模态推理模型',
 
   'model.doubao-seed-2.0-pro.detail':
     '侧重长链路推理能力与复杂任务稳定性，适配真实业务中的复杂场景',
