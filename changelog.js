@@ -176,7 +176,8 @@ try {
         if (lines.length < 2) return;
 
         const subject = lines[0];
-        const author = lines[lines.length - 1].trim().toLowerCase();
+        const authorMatch = subject.match(/from ([\w.-]+)\//i);
+        const author = authorMatch ? authorMatch[1] : lines[lines.length - 1].trim().toLowerCase();
 
         let prTitle = lines.length > 2 && !lines[1].startsWith('Merge pull request') ? lines[1] : subject;
         const prMatch = subject.match(/Merge pull request #(\d+)/i);
@@ -214,10 +215,19 @@ try {
     if (sectionRegex.test(existingContent)) {
       existingContent = existingContent.replace(sectionRegex, markdownText.trim());
       fs.writeFileSync(changelogPath, existingContent, 'utf8');
+
       console.log(`Found an existing [${sectionVersion}] section. Successfully updated: ${changelogPath}`);
     } else {
-      fs.writeFileSync(changelogPath, markdownText + '\n' + existingContent, 'utf8');
-      console.log(`No [${sectionVersion}] section found. Successfully prepended a new section: ${changelogPath}`);
+      const lines = existingContent.split('\n');
+      let insertAt = 0;
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i].trim().startsWith('# ')) { insertAt = i + 1; break; }
+        if (lines[i].trim().startsWith('## [')) { insertAt = i; break; }
+      }
+      lines.splice(insertAt, 0, markdownText + '\n');
+      fs.writeFileSync(changelogPath, lines.join('\n'), 'utf8');
+
+      console.log(`No [${sectionVersion}] section found. Successfully inserted a new section: ${changelogPath}`);
     }
   } else {
     fs.writeFileSync(changelogPath, title + markdownText, 'utf8');
