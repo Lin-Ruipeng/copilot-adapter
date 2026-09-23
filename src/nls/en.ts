@@ -84,7 +84,8 @@ export const en: Translation = {
   'model.glm-4v-flash.detail': 'Free model — image understanding, multilingual',
 
   'model.mimo-v2.5-pro.detail': 'Deep reasoning model with large context support',
-  'model.mimo-v2.5.detail': 'Deep reasoning model with vision support',
+  'model.mimo-v2.6-pro.detail': 'Flagship full-modal reasoning model',
+  'model.mimo-v2.6-flash.detail': 'Fast, cost-effective full-modal reasoning model',
 
   'model.doubao-seed-2.0-pro.detail':
     'Focused on long-chain reasoning and stability in complex task execution, designed for complex real-world business scenarios.',

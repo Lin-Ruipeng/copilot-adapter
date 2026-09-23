@@ -342,6 +342,8 @@ export const MODEL_THINKING_MAP: ReadonlyMap<string, ThinkingConfig> = new Map([
   ['MiniMax-M2', MINIMAX_THINKING],
 
   // MIMO
+  ['mimo-v2.6-pro', MIMO_THINKING],
+  ['mimo-v2.6-flash', MIMO_THINKING],
   ['mimo-v2.5-pro', MIMO_THINKING],
   ['mimo-v2.5', MIMO_THINKING],
 

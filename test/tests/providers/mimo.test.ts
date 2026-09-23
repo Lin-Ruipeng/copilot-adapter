@@ -6,11 +6,11 @@ import { backfillModel } from '../../../src/providers/loader';
 import type { ModelItem } from '../../../src/providers/types';
 
 function proModel(): ModelItem {
-  return MIMO_MODELS.find((m) => m.id === 'mimo-v2.5-pro')! as ModelItem;
+  return MIMO_MODELS.find((m) => m.id === 'mimo-v2.6-pro')! as ModelItem;
 }
 
-function baseModel(): ModelItem {
-  return MIMO_MODELS.find((m) => m.id === 'mimo-v2.5')! as ModelItem;
+function flashModel(): ModelItem {
+  return MIMO_MODELS.find((m) => m.id === 'mimo-v2.6-flash')! as ModelItem;
 }
 
 suite('providers/mimo model list', () => {
@@ -18,14 +18,14 @@ suite('providers/mimo model list', () => {
     assert.equal(MIMO_MODELS.length, 2);
   });
 
-  test('first model is mimo-v2.5-pro', () => {
-    assert.equal(MIMO_MODELS[0].id, 'mimo-v2.5-pro');
-    assert.equal(MIMO_MODELS[0].label, 'MIMO V2.5 Pro');
+  test('first model is mimo-v2.6-pro', () => {
+    assert.equal(MIMO_MODELS[0].id, 'mimo-v2.6-pro');
+    assert.equal(MIMO_MODELS[0].label, 'MIMO V2.6 Pro');
   });
 
-  test('second model is mimo-v2.5', () => {
-    assert.equal(MIMO_MODELS[1].id, 'mimo-v2.5');
-    assert.equal(MIMO_MODELS[1].label, 'MIMO V2.5');
+  test('second model is mimo-v2.6-flash', () => {
+    assert.equal(MIMO_MODELS[1].id, 'mimo-v2.6-flash');
+    assert.equal(MIMO_MODELS[1].label, 'MIMO V2.6 Flash');
   });
 
   test('MIMO provider id is "mimo"', () => {
@@ -48,9 +48,29 @@ suite('providers/mimo model list', () => {
     }
   });
 
-  test('pro model has imageInput=false, base model has imageInput=true', () => {
-    assert.equal(proModel().imageInput, false);
-    assert.equal(baseModel().imageInput, true);
+  test('both models support image input', () => {
+    for (const m of MIMO_MODELS) {
+      assert.equal(m.imageInput, true);
+    }
+  });
+
+  test('both models report version 2.6 with a 1M context window and 128K max output', () => {
+    for (const m of MIMO_MODELS) {
+      assert.equal(m.version, '2.6');
+      assert.equal(m.maxInputTokens, 917_504);
+      assert.equal(m.maxOutputTokens, 131_072);
+    }
+  });
+
+  test('both models use the documented pricing', () => {
+    assert.deepEqual(proModel().pricing, {
+      USD: { default: { cacheInput: 0.0036, input: 0.435, output: 0.87 } },
+      CNY: { default: { cacheInput: 0.025, input: 3.0, output: 6.0 } },
+    });
+    assert.deepEqual(flashModel().pricing, {
+      USD: { default: { cacheInput: 0.0028, input: 0.14, output: 0.28 } },
+      CNY: { default: { cacheInput: 0.02, input: 1.0, output: 2.0 } },
+    });
   });
 
   test('both models support thinking', () => {
@@ -145,10 +165,10 @@ suite('providers/mimo model.configSchema()', () => {
     assert.equal(tm.type, 'string');
   });
 
-  test('base model has config schema', () => {
-    const bm = baseModel();
-    backfillModel(bm);
-    const schema = bm.configSchema!();
+  test('flash model has config schema', () => {
+    const flash = flashModel();
+    backfillModel(flash);
+    const schema = flash.configSchema!();
     assert.ok(schema !== undefined);
   });
 });
